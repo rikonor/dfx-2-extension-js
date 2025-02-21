@@ -18,6 +18,7 @@ component: init target-dir
 		src/$(NAME).js \
 			--disable all \
 			--wit wit/world.wit \
+			--aot \
 			-o $(TARGET_DIR)/$(NAME).component.wasm
 
 output-path:
