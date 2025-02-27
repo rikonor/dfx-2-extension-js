@@ -1,4 +1,4 @@
-NAME        = main
+NAME        = $(shell jq -r .name package.json)
 TARGET_DIR ?= out
 
 all: component output-path
@@ -7,7 +7,8 @@ init:
 	@echo "--> Initializing dependencies"
 	@npm install \
 		@bytecodealliance/jco \
-		@bytecodealliance/componentize-js
+		@bytecodealliance/componentize-js \
+		@bytecodealliance/preview2-shim
 
 target-dir:
 	@mkdir -p $(TARGET_DIR)
@@ -15,7 +16,7 @@ target-dir:
 component: init target-dir
 	@echo "--> Componentizing"
 	@npx jco componentize \
-		src/$(NAME).js \
+		src/main.js \
 			--disable all \
 			--wit wit/world.wit \
 			--aot \

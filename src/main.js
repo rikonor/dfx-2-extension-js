@@ -1,8 +1,8 @@
 import { print } from "my-namespace:my-package/host";
 
 const CLI_SPEC = JSON.stringify({
-    name: "ext-2",
-    help: "The most amazing extension you've ever seen",
+    name: "ext-js",
+    help: "Example JavaScript extension",
     args: [],
     subcommands: [],
 });
@@ -14,7 +14,7 @@ export const lib = {
 export const cli = {
     spec: () => CLI_SPEC,
     run: (args) => {
-        print("butts");
+        print("hello from JavaScript extension");
         return 0;
     },
 }

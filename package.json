@@ -1,6 +1,9 @@
 {
+  "name": "ext-js",
+  "version": "0.1.0",
   "dependencies": {
     "@bytecodealliance/componentize-js": "^0.16.0",
-    "@bytecodealliance/jco": "^1.9.1"
+    "@bytecodealliance/jco": "^1.10.1",
+    "@bytecodealliance/preview2-shim": "^0.17.1"
   }
 }
